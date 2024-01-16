@@ -117,6 +117,7 @@ const Sidebar = ({
           anchor="left"
           sx={{
             width: drawerWidth,
+            flexShrink: 0,
             "& .MuiDrawer-paper": {
               color: theme.palette.secondary[200],
               backgroundColor: theme.palette.background.alt,
@@ -174,12 +175,10 @@ const Sidebar = ({
                       }}
                       sx={{
                         backgroundColor:
-                          active === lcText
-                            ? theme.palette.secondary[300]
-                            : "transparent",
+                          active === lcText ? "transparent" : "transparent",
                         color:
                           active === lcText
-                            ? theme.palette.primary[600]
+                            ? theme.palette.secondary[100]
                             : theme.palette.secondary[100],
                       }}
                     >
@@ -188,8 +187,8 @@ const Sidebar = ({
                           ml: "2rem",
                           color:
                             active === lcText
-                              ? theme.palette.primary[600]
-                              : theme.palette.secondary[200],
+                              ? theme.palette.secondary[200]
+                              : theme.palette.secondary[100],
                         }}
                       >
                         {icon}
