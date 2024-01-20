@@ -48,7 +48,7 @@ const Daily = () => {
   }, [data, startDate, endDate]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box m="1.5rem 2.5rem" pb="3rem">
       <Header
         title="DAILY SALES"
         subtitle="Chart of daily sales"

@@ -10,13 +10,13 @@ const Geography = () => {
   const {data} = useGetGeographyQuery()
   console.log("geography data", data);
   return (
-    <Box m="1.5rem 2.5rem">
+    <Box m="1.5rem 2.5rem" pb="2rem">
       <Header
         title="GEOGRAPHY"
         subtitle="See where your users are located"
       />
       <Box
-        mt="40px"
+        mt="30px"
         height="100vh"
         border={`1px solid ${theme.palette.secondary[200]}`}
         borderRadius="4px"

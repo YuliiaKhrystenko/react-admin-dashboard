@@ -1,4 +1,19 @@
-import React, { useEffect, useState } from "react"
+import {
+  AdminPanelSettingsOutlined,
+  CalendarMonthOutlined,
+  ChevronLeft,
+  ChevronRightOutlined,
+  Groups2Outlined,
+  HomeOutlined,
+  PieChartOutline,
+  PointOfSaleOutlined,
+  PublicOutlined,
+  ReceiptLongOutlined,
+  SettingsOutlined,
+  ShoppingCartOutlined,
+  TodayOutlined,
+  TrendingUpOutlined,
+} from "@mui/icons-material"
 import {
   Box,
   Divider,
@@ -12,25 +27,10 @@ import {
   Typography,
   useTheme,
 } from "@mui/material"
-import {
-  SettingsOutlined,
-  ChevronLeft,
-  ChevronRightOutlined,
-  HomeOutlined,
-  ShoppingCartOutlined,
-  Groups2Outlined,
-  ReceiptLongOutlined,
-  PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
-  TrendingUpOutlined,
-  PieChartOutline,
-} from "@mui/icons-material"
+import profileImage from "assets/profile.jpeg"
+import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import FlexBetween from "./FlexBetween"
-import profileImage from "assets/profile.jpeg"
 
 const navItems = [
   {
@@ -91,9 +91,10 @@ const navItems = [
   },
 ]
 
+const drawerWidth = 240
+
 const Sidebar = ({
   user,
-  drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,
   isNonMobile,
@@ -111,10 +112,6 @@ const Sidebar = ({
     <Box component="nav">
       {isSidebarOpen && (
         <Drawer
-          open={isSidebarOpen}
-          onClose={() => setIsSidebarOpen(false)}
-          variant="persistent"
-          anchor="left"
           sx={{
             width: drawerWidth,
             flexShrink: 0,
@@ -126,6 +123,10 @@ const Sidebar = ({
               width: drawerWidth,
             },
           }}
+          variant="persistent"
+          anchor="left"
+          open={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
         >
           <Box width="100%">
             <Box m="1.5rem 2rem 2rem 3rem">
@@ -139,7 +140,7 @@ const Sidebar = ({
                     variant="h4"
                     fontWeight="bold"
                   >
-                    ECOMVISION
+                    ADMIN VISION
                   </Typography>
                 </Box>
                 {!isNonMobile && (

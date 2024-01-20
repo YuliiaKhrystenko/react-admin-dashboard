@@ -1,28 +1,29 @@
-import React, { useState } from "react"
 import {
-  LightModeOutlined,
+  ArrowDropDownOutlined,
   DarkModeOutlined,
+  LightModeOutlined,
   Menu as MenuIcon,
   Search,
   Settings,
-  ArrowDropDownOutlined,
 } from "@mui/icons-material"
-import FlexBetween from "components/FlexBetween"
-import { useDispatch } from "react-redux"
-import { setMode } from "state"
 import {
+  Box,
   AppBar,
   Button,
   IconButton,
   InputBase,
-  Toolbar,
-  useTheme,
-  Typography, 
-  Box,
   Menu,
-  MenuItem
+  MenuItem,
+  Toolbar,
+  Typography,
+  useTheme
 } from "@mui/material"
 import profileImage from "assets/profile.jpeg"
+import FlexBetween from "components/FlexBetween"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { setMode } from "state"
+
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
-        <FlexBetween>
+        <FlexBetween gap="0.5rem">
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
